@@ -1,0 +1,11 @@
+.section-gap{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.bold-text{
+    font-weight: 600;
+}
+#equipmentGallery img{
+    height: 15rem !important;
+    width: 100%;
+}

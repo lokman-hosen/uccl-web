@@ -1,113 +1,89 @@
 import Image from 'next/image'
+import bg from '/public/img/slider-2.png'
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+function Home() {
+    return (
+        <div>
+            <section className="home-slider owl-carousel">
+                <div className="slider-item" style={{backgroundImage: `url(${bg.src})`}}>
+                    <div className="container">
+                        <div className="row slider-text align-items-center justify-content-center text-center">
+                            <div className="col-md-7 col-sm-12">
+                                <h1 className="mb-4"> Fastest-Growing Construction Company</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="section bg-light">
+                <div className="container">
+                    <div className="row align-items-center">
+                        <div className="col-md-6 pr-lg-5 mb-5 mb-md-0">
+                            <div className="pr-lg-5">
+                                <h2 className="text-uppercase heading border-bottom mb-4 text-left">UCCL<br/>THE UNITED
+                                    CONSTRUCTION COMPANY LIMITED</h2>
+                                <p><b>THE UNITED CONSTRUCTION CO.</b>was established in 1976 as a proprietorship
+                                    construction company. Due to the situation's demand and the expansion of the
+                                    business manifold, the management feels the necessity to convert the
+                                    proprietorship to a limited company. To achieve this goal, The United
+                                    Construction Company converted to The United Construction Company Limited
+                                    in 2017 followed by due procedure and later in the year 2023, NDE Infrastructure
+                                    has taken over the ownership of UCCL The United Construction Company Ltd.</p>
+                                <p>From the inception of the company, it has undertaken various Governments,
+                                    Semi-Government and private Construction work and completed all the works
+                                    very successfully and in time. The company is technically and financially very
+                                    sound and equipped with modern construction equipment.</p>
+
+                                <p>As of today, the
+                                    company have completed more than 60 Nos. of projects under Government and
+                                    Semi-Governments which includes hi-rise commercial, residential, institutional
+                                    and factory buildings, roads, bridges, culverts, warehouse <a href="about.html">Read more
+                                        ....</a></p>
+                            </div>
+                        </div>
+                        <div className="col-md-6 ">
+                            <img src="/img/work_thumb_1.jpg" alt="" className="img-fluid"/>
+                        </div>
+                    </div>
+
+                    <div className="row section-gap text-center">
+                        <div className="col-md-8">
+                            <div className="card h-100">
+                                <div className="card-body">
+                                    <h5>Our Mission</h5>
+                                    <p>Our mission is to perform for our customers the highest level of quality
+                                        construction services at fair and satisfaction in all areas including timeliness,
+                                        attention to detail, and service-minded attitudes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-4">
+                            <div className="card h-100">
+                                <div className="card-body">
+                                    <h5>Our Vision</h5>
+                                    <p>Quality comes first and profit is its logical sequence</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="section border-t">
+                <div className="container">
+                    <div className="row justify-content-center mb-5">
+                        <div className="col-md-8 text-center">
+                            <h2 className="text-uppercase heading border-bottom mb-4">Projects</h2>
+                            <p className="mb-3 lead">Some completed projects are given below. Browse more projects from <a
+                                href="project.html">Here</a></p>
+                        </div>
+                    </div>
+                    <div className="row no-gutters" id="remarkableProject">
+                    </div>
+                </div>
+            </section>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    )
 }
+
+export default Home;
