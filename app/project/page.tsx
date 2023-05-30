@@ -5,10 +5,10 @@ import React, { useState, useEffect } from 'react';
 
 import bg from '/public/img/slider-2.png'
 import Image from "next/image";
+import {projectList} from '/app/projectList'
 
  function Project() {
-     const allProjects = allProjects
-
+     const allProjects:object = projectList
      const [projects, setProjects] = useState([]);
 
      useEffect(() => {

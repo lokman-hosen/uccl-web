@@ -1,7 +1,30 @@
 'use client';
-
 import bg from '/public/img/slider-1.jpg'
- function ProjectDetail() {
+import {projectList} from '/app/projectList'
+import React, {useEffect, useState} from "react";
+import Image from "next/image";
+
+function ProjectDetail({ params }) {
+    let projectId = params.id;
+    console.log(params.id);
+
+    const allProjects:object = projectList
+    const [project, setProject] = useState({
+        name: '',
+        client_name: '',
+        work_detail: '',
+    });
+
+    useEffect(() => {
+        loadSingleProject(projectId)
+    },[projectId]);
+
+    function loadSingleProject(projectId){
+        let project = allProjects.find(function(singleProject) {
+            return singleProject.id == projectId;
+        });
+        setProject(project);
+    }
     return (
         <div>
             <section className="home-slider  inner-page owl-carousel">
@@ -20,15 +43,22 @@ import bg from '/public/img/slider-1.jpg'
                 <div className="container">
                     <div className="row mb-5">
                         <div className="col-md-12">
-                            <img src="" alt="Image placeholder" className="img-fluid" id="imagePath"/>
+                            <div style={{width: '100%', height:600, position: 'relative'}}>
+                                <Image
+                                    className="img-fluid"
+                                    src="/img/projects/default.png"
+                                    alt="Image Placeholder"
+                                    layout='fill'
+                                />
+                            </div>
                         </div>
                     </div>
                     <div className="row mb-5">
                         <div className="col-12">
                             <h2 className="heading">Project title: </h2>
-                            <p className="heading mb-4" id="projectTitle"></p>
-                            <h5 className="heading mb-4"><b>Client/Employer : </b><span id="clientName"></span></h5>
-                            <p><b>Description:</b> <span id="projectDetail"></span></p>
+                            <p className="heading mb-4">{project.name}</p>
+                            <h5 className="heading mb-4"><b>Client/Employer : </b><span id="clientName">{project.client_name}</span></h5>
+                            <p><b>Description:</b> {project.work_detail}</p>
                         </div>
                     </div>
 
